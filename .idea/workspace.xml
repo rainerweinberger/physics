@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0da2679b-bd44-4bf2-9203-554e8add2b87" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../physics/setup.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../physics/tests/test_Physics.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../physics/tests/test_PhysicsConstants.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../physics/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../physics/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../physics/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../physics/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../physics/physics/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/../physics/physics/__init__.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,14 +30,14 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../physics" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../physics/tests/test_Physics.py" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/../physics/physics" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python tests.test_Physics">
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <module name="physics" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -103,6 +102,40 @@
       <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
+    <configuration name="test_Physics" type="tests" factoryName="py.test">
+      <module name="physics" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="$USER_HOME$/anaconda3/envs/Physics/bin/python" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/../physics/tests/test_Physics.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="test_PhysicsConstants" type="tests" factoryName="py.test">
+      <module name="physics" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="$USER_HOME$/anaconda3/envs/Physics/bin/python" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/../physics/tests/test_PhysicsConstants.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Python tests.test_PhysicsConstants" />
+      <item itemvalue="Python tests.test_Physics" />
+    </list>
   </component>
   <component name="ServiceViewManager">
     <option name="viewStates">
@@ -141,30 +174,58 @@
       <option name="project" value="LOCAL" />
       <updated>1577157120969</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="setup script to install as library">
+      <created>1577158233329</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1577158233329</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial commit" />
     <MESSAGE value="License information" />
-    <option name="LAST_COMMIT_MESSAGE" value="License information" />
+    <MESSAGE value="setup script to install as library" />
+    <option name="LAST_COMMIT_MESSAGE" value="setup script to install as library" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="570" y="125" width="775" height="811" key="CommitChangelistDialog2" timestamp="1577157120920">
+    <state x="422" y="185" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1577158894464">
       <screen x="67" y="0" width="1853" height="1080" />
     </state>
-    <state x="570" y="125" width="775" height="811" key="CommitChangelistDialog2/0.1080.1920.1080/67.0.1853.1080@67.0.1853.1080" timestamp="1577157120920" />
-    <state x="731" y="270" width="454" height="521" key="FileChooserDialogImpl" timestamp="1577155138825">
+    <state x="422" y="185" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.1080.1920.1080/67.0.1853.1080@67.0.1853.1080" timestamp="1577158894464" />
+    <state x="570" y="117" width="775" height="811" key="CommitChangelistDialog2" timestamp="1577158233263">
       <screen x="67" y="0" width="1853" height="1080" />
     </state>
-    <state x="731" y="270" width="454" height="521" key="FileChooserDialogImpl/0.1080.1920.1080/67.0.1853.1080@67.0.1853.1080" timestamp="1577155138825" />
+    <state x="570" y="117" width="775" height="811" key="CommitChangelistDialog2/0.1080.1920.1080/67.0.1853.1080@67.0.1853.1080" timestamp="1577158233263" />
+    <state x="731" y="254" width="454" height="521" key="FileChooserDialogImpl" timestamp="1577158892750">
+      <screen x="67" y="0" width="1853" height="1080" />
+    </state>
+    <state x="731" y="254" width="454" height="521" key="FileChooserDialogImpl/0.1080.1920.1080/67.0.1853.1080@67.0.1853.1080" timestamp="1577158892750" />
     <state x="815" y="430" width="289" height="202" key="Github.ShareDialog" timestamp="1577155301918">
       <screen x="67" y="0" width="1853" height="1080" />
     </state>
     <state x="815" y="430" width="289" height="202" key="Github.ShareDialog/0.1080.1920.1080/67.0.1853.1080@67.0.1853.1080" timestamp="1577155301918" />
-    <state x="558" y="271" width="800" height="536" key="Vcs.Push.Dialog.v2" timestamp="1577157181446">
+    <state width="1897" height="287" key="GridCell.Tab.0.bottom" timestamp="1577159000427">
       <screen x="67" y="0" width="1853" height="1080" />
     </state>
-    <state x="558" y="271" width="800" height="536" key="Vcs.Push.Dialog.v2/0.1080.1920.1080/67.0.1853.1080@67.0.1853.1080" timestamp="1577157181446" />
+    <state width="1897" height="287" key="GridCell.Tab.0.bottom/0.1080.1920.1080/67.0.1853.1080@67.0.1853.1080" timestamp="1577159000427" />
+    <state width="1897" height="287" key="GridCell.Tab.0.center" timestamp="1577159000427">
+      <screen x="67" y="0" width="1853" height="1080" />
+    </state>
+    <state width="1897" height="287" key="GridCell.Tab.0.center/0.1080.1920.1080/67.0.1853.1080@67.0.1853.1080" timestamp="1577159000427" />
+    <state width="1897" height="287" key="GridCell.Tab.0.left" timestamp="1577159000427">
+      <screen x="67" y="0" width="1853" height="1080" />
+    </state>
+    <state width="1897" height="287" key="GridCell.Tab.0.left/0.1080.1920.1080/67.0.1853.1080@67.0.1853.1080" timestamp="1577159000427" />
+    <state width="1897" height="287" key="GridCell.Tab.0.right" timestamp="1577159000427">
+      <screen x="67" y="0" width="1853" height="1080" />
+    </state>
+    <state width="1897" height="287" key="GridCell.Tab.0.right/0.1080.1920.1080/67.0.1853.1080@67.0.1853.1080" timestamp="1577159000427" />
+    <state x="558" y="263" width="800" height="536" key="Vcs.Push.Dialog.v2" timestamp="1577158237913">
+      <screen x="67" y="0" width="1853" height="1080" />
+    </state>
+    <state x="558" y="263" width="800" height="536" key="Vcs.Push.Dialog.v2/0.1080.1920.1080/67.0.1853.1080@67.0.1853.1080" timestamp="1577158237913" />
   </component>
 </project>
