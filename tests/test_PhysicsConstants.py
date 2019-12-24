@@ -21,4 +21,4 @@ import pytest
 
 def test_PhysicsConstantsLoadable():
     from physics import constants
-    assert constants.KILOPARSEC == pytest.approx(3.085678e+21)
+    assert constants.CLIGHT == pytest.approx(2.99792458e10)

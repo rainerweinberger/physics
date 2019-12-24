@@ -17,6 +17,7 @@
 # along with physics.  If not, see <https://www.gnu.org/licenses/>.
 
 from . import constants
+from . import units
 
 def print_copyright():
     """
