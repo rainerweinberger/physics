@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0da2679b-bd44-4bf2-9203-554e8add2b87" name="Default Changelist" comment="" />
+    <list default="true" id="0da2679b-bd44-4bf2-9203-554e8add2b87" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../physics/LICENSE.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../physics/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../physics/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../physics/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../physics/physics/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/../physics/physics/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../physics/physics/constants/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/../physics/physics/constants/__init__.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,6 +24,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../physics" />
   </component>
   <component name="ProjectId" id="1VPTvNhEibCZnIIdIOA9egLeY3D" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -26,6 +33,11 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../physics" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/../physics/physics" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
@@ -116,12 +128,32 @@
       <option name="presentableId" value="Default" />
       <updated>1577153959229</updated>
     </task>
+    <task id="LOCAL-00001" summary="Initial commit">
+      <created>1577155214984</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1577155214984</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Initial commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Initial commit" />
+  </component>
   <component name="WindowStateProjectService">
+    <state x="570" y="133" width="775" height="811" key="CommitChangelistDialog2" timestamp="1577155214916">
+      <screen x="67" y="0" width="1853" height="1080" />
+    </state>
+    <state x="570" y="133" width="775" height="811" key="CommitChangelistDialog2/0.1080.1920.1080/67.0.1853.1080@67.0.1853.1080" timestamp="1577155214916" />
     <state x="731" y="270" width="454" height="521" key="FileChooserDialogImpl" timestamp="1577155138825">
       <screen x="67" y="0" width="1853" height="1080" />
     </state>
     <state x="731" y="270" width="454" height="521" key="FileChooserDialogImpl/0.1080.1920.1080/67.0.1853.1080@67.0.1853.1080" timestamp="1577155138825" />
+    <state x="815" y="430" width="289" height="202" key="Github.ShareDialog" timestamp="1577155301918">
+      <screen x="67" y="0" width="1853" height="1080" />
+    </state>
+    <state x="815" y="430" width="289" height="202" key="Github.ShareDialog/0.1080.1920.1080/67.0.1853.1080@67.0.1853.1080" timestamp="1577155301918" />
   </component>
 </project>
