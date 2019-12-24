@@ -16,6 +16,8 @@
 # You should have received a copy of the GNU General Public License
 # along with physics.  If not, see <https://www.gnu.org/licenses/>.
 
+from . import constants
+
 def print_copyright():
     """
     prints copyright for physics module
