@@ -11,7 +11,7 @@ setuptools.setup(
     author_email="rainer.weinberger@cfa.harvard.edu",
     description="Useful physics stuff for python",
     url="https://github.com/rainerweinberger/physics",
-    packages=["physics"],
+    packages=setuptools.find_packages(),
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: GNU General Public License v3 (GPLv3)"
