@@ -1,4 +1,4 @@
-#! /tests/test_Physics.py
+#! /tests/test_physics_units.py
 #
 # This file is part of physics.
 # Copyright (C) 2020  Rainer Weinberger (rainer.weinberger@cfa.harvard.edu)
@@ -19,7 +19,6 @@
 import pytest
 
 
-def test_PhysicsLoadable():
-    import physics
-    physics.print_copyright()
-    assert True
+def test_PhysicsUnitsLoadable():
+    from physics import units
+    assert units.KILOPARSEC == pytest.approx(3.085678e+21)

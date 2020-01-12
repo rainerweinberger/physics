@@ -1,4 +1,4 @@
-#! /tests/test_PhysicsUnits.py
+#! /tests/test_physics_constants.py
 #
 # This file is part of physics.
 # Copyright (C) 2020  Rainer Weinberger (rainer.weinberger@cfa.harvard.edu)
@@ -19,6 +19,6 @@
 import pytest
 
 
-def test_PhysicsUnitsLoadable():
-    from physics import units
-    assert units.KILOPARSEC == pytest.approx(3.085678e+21)
+def test_PhysicsConstantsLoadable():
+    from physics import constants
+    assert constants.CLIGHT == pytest.approx(2.99792458e10)

@@ -1,4 +1,4 @@
-#! /tests/test_PhysicsConstants.py
+#! /tests/test_physics.py
 #
 # This file is part of physics.
 # Copyright (C) 2020  Rainer Weinberger (rainer.weinberger@cfa.harvard.edu)
@@ -19,6 +19,7 @@
 import pytest
 
 
-def test_PhysicsConstantsLoadable():
-    from physics import constants
-    assert constants.CLIGHT == pytest.approx(2.99792458e10)
+def test_PhysicsLoadable():
+    import physics
+    physics.print_copyright()
+    assert True
