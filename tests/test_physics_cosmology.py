@@ -18,7 +18,8 @@
 
 import pytest
 from physics.cosmology import Cosmology
-
+from physics.constants import CLIGHT
+from physics.units import MEGAPARSEC
 
 class TestCosmology(object):
     def test_init(self):
@@ -54,3 +55,89 @@ class TestCosmology(object):
         print(my_cosmology._hubble_constant)  # make sure this is still possible
         print(my_cosmology['wmap9'])
         print(Cosmology().planck2016)
+
+    def test_hubble_distance(self):
+        """
+        Hubble distance
+        """
+        h_0 = 1.0
+        my_cosmology = Cosmology(hubble_constant=h_0)
+        d_h = my_cosmology.hubble_distance
+
+        H_0 = 100. * h_0 * 1.0e5 / MEGAPARSEC
+        d_h_reference = CLIGHT / H_0
+
+        assert d_h == pytest.approx(d_h_reference)
+
+    def test_hubble_time(self):
+        """
+        Hubble time
+        """
+        h_0 = 1.0
+        my_cosmology = Cosmology(hubble_constant=h_0)
+        t_h = my_cosmology.hubble_time
+
+        H_0 = 100. * h_0 * 1.0e5 / MEGAPARSEC
+        t_h_reference = 1.0 / H_0
+
+        assert t_h == pytest.approx(t_h_reference)
+
+        """
+        ToDo: matter density
+        """
+
+        """
+        ToDo: lambda
+        """
+
+        """
+        ToDo: Omega curvature
+        """
+
+        """
+        ToDo: peculiar velocity
+        """
+
+        """
+        ToDo: redshift to scalefactor, scalefactor to redshift
+        """
+
+        """
+        ToDo: E-factor
+        """
+
+        """
+        ToDo: Comoving distance
+        """
+
+        """
+        ToDo: Transverse comoving distance
+        """
+
+        """
+        ToDo: Angular diameter distance
+        """
+
+        """
+        ToDo: Luminosity distance
+        """
+
+        """
+        ToDo: k-correction
+        """
+
+        """
+        ToDo: distance modulus
+        """
+
+        """
+        ToDo: Comoving volume
+        """
+
+        """
+        ToDo: Lookback time
+        """
+
+        """
+        ToDo: Probability of intersecting objects
+        """

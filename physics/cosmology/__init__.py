@@ -17,6 +17,7 @@
 # along with physics.  If not, see <https://www.gnu.org/licenses/>.
 from __future__ import annotations
 import numpy as np
+from physics import constants, units
 
 
 class Cosmology(object):
@@ -98,3 +99,19 @@ class Cosmology(object):
 
     def __getitem__(self, item):
         return self.literature_values[item]
+
+    @property
+    def hubble_distance(self) -> np.float64:
+        """
+        :return: np.float64
+            hubble distance in cm
+        """
+        return np.float64(0.1 * constants.CLIGHT / self._hubble_constant * units.PARSEC)
+
+    @property
+    def hubble_time(self) -> np.float64:
+        """
+        :return: np.float64
+            hubble time in s
+        """
+        return np.float64(0.1 / self._hubble_constant * units.PARSEC)

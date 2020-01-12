@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0da2679b-bd44-4bf2-9203-554e8add2b87" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/physics/cosmology/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/test_physics_cosmology.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/physics/cosmology/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/physics/cosmology/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_physics_cosmology.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_physics_cosmology.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,7 +31,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/tests/test_physics_cosmology.py" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
@@ -39,8 +39,8 @@
       <recent name="$PROJECT_DIR$/physics" />
     </key>
   </component>
-  <component name="RunManager" selected="Python tests.test_PhysicsUnits">
-    <configuration name="test_Physics" type="tests" factoryName="py.test">
+  <component name="RunManager" selected="Python tests.test_physics_cosmology">
+    <configuration name="test_physics" type="tests" factoryName="py.test">
       <module name="physics" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -55,7 +55,7 @@
       <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="test_PhysicsConstants" type="tests" factoryName="py.test">
+    <configuration name="test_physics_constants" type="tests" factoryName="py.test">
       <module name="physics" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -70,7 +70,22 @@
       <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="test_PhysicsUnits" type="tests" factoryName="py.test">
+    <configuration name="test_physics_cosmology" type="tests" factoryName="py.test">
+      <module name="physics" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="$USER_HOME$/anaconda3/envs/Physics/bin/python" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/tests/test_physics_cosmology.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="test_physics_units" type="tests" factoryName="py.test">
       <module name="physics" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -86,9 +101,10 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python tests.test_PhysicsConstants" />
-      <item itemvalue="Python tests.test_PhysicsUnits" />
-      <item itemvalue="Python tests.test_Physics" />
+      <item itemvalue="Python tests.test_physics_cosmology" />
+      <item itemvalue="Python tests.test_physics_constants" />
+      <item itemvalue="Python tests.test_physics_units" />
+      <item itemvalue="Python tests.test_physics" />
     </list>
   </component>
   <component name="ServiceViewManager">
@@ -156,7 +172,14 @@
       <option name="project" value="LOCAL" />
       <updated>1578803503453</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="introduced new submodule physics/cosmology with class Cosmology">
+      <created>1578803672079</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1578803672079</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -166,64 +189,69 @@
     <MESSAGE value="first unit tests" />
     <MESSAGE value="created submodule units" />
     <MESSAGE value="renaming of test scripts" />
-    <option name="LAST_COMMIT_MESSAGE" value="renaming of test scripts" />
+    <MESSAGE value="introduced new submodule physics/cosmology with class Cosmology" />
+    <option name="LAST_COMMIT_MESSAGE" value="introduced new submodule physics/cosmology with class Cosmology" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="368" y="1257" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1577210343002">
-      <screen x="0" y="1080" width="1920" height="1080" />
+    <state x="422" y="177" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1578846662854">
+      <screen x="67" y="0" width="1853" height="1080" />
     </state>
     <state x="368" y="1257" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.1080.1920.1080/67.0.1853.1080@0.1080.1920.1080" timestamp="1577210343002" />
-    <state x="422" y="185" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.1080.1920.1080/67.0.1853.1080@67.0.1853.1080" timestamp="1577158894464" />
+    <state x="422" y="177" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.1080.1920.1080/67.0.1853.1080@67.0.1853.1080" timestamp="1578846662854" />
     <state x="657" y="340" width="601" height="398" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1577209813349">
       <screen x="67" y="0" width="1853" height="1080" />
     </state>
     <state x="657" y="340" width="601" height="398" key="#com.intellij.fileTypes.FileTypeChooser/0.1080.1920.1080/67.0.1853.1080@67.0.1853.1080" timestamp="1577209813349" />
-    <state x="570" y="101" width="775" height="815" key="CommitChangelistDialog2" timestamp="1578803503347">
+    <state x="570" y="93" width="775" height="815" key="CommitChangelistDialog2" timestamp="1578803671998">
       <screen x="67" y="0" width="1853" height="1080" />
     </state>
     <state x="521" y="1173" width="775" height="815" key="CommitChangelistDialog2/0.1080.1920.1080/67.0.1853.1080@0.1080.1920.1080" timestamp="1577213321787" />
-    <state x="570" y="101" width="775" height="811" key="CommitChangelistDialog2/0.1080.1920.1080/67.0.1853.1080@67.0.1853.1080" timestamp="1578803503347" />
-    <state x="688" y="1318" width="424" height="492" key="FileChooserDialogImpl" timestamp="1577210340318">
-      <screen x="0" y="1080" width="1920" height="1080" />
+    <state x="570" y="93" width="775" height="811" key="CommitChangelistDialog2/0.1080.1920.1080/67.0.1853.1080@67.0.1853.1080" timestamp="1578803671998" />
+    <state x="731" y="246" width="424" height="492" key="FileChooserDialogImpl" timestamp="1578846634121">
+      <screen x="67" y="0" width="1853" height="1080" />
     </state>
     <state x="688" y="1318" width="424" height="492" key="FileChooserDialogImpl/0.1080.1920.1080/67.0.1853.1080@0.1080.1920.1080" timestamp="1577210340318" />
-    <state x="731" y="254" width="454" height="521" key="FileChooserDialogImpl/0.1080.1920.1080/67.0.1853.1080@67.0.1853.1080" timestamp="1577158892750" />
+    <state x="731" y="246" width="454" height="521" key="FileChooserDialogImpl/0.1080.1920.1080/67.0.1853.1080@67.0.1853.1080" timestamp="1578846634121" />
     <state x="815" y="430" width="289" height="202" key="Github.ShareDialog" timestamp="1577155301918">
       <screen x="67" y="0" width="1853" height="1080" />
     </state>
     <state x="815" y="430" width="289" height="202" key="Github.ShareDialog/0.1080.1920.1080/67.0.1853.1080@67.0.1853.1080" timestamp="1577155301918" />
-    <state width="1830" height="277" key="GridCell.Tab.0.bottom" timestamp="1577211989600">
-      <screen x="0" y="1080" width="1920" height="1080" />
+    <state width="1897" height="291" key="GridCell.Tab.0.bottom" timestamp="1578847646438">
+      <screen x="67" y="0" width="1853" height="1080" />
     </state>
     <state width="1830" height="277" key="GridCell.Tab.0.bottom/0.1080.1920.1080/67.0.1853.1080@0.1080.1920.1080" timestamp="1577211989600" />
-    <state width="1897" height="287" key="GridCell.Tab.0.bottom/0.1080.1920.1080/67.0.1853.1080@67.0.1853.1080" timestamp="1577159983708" />
-    <state width="1830" height="277" key="GridCell.Tab.0.center" timestamp="1577211989600">
-      <screen x="0" y="1080" width="1920" height="1080" />
+    <state width="1897" height="291" key="GridCell.Tab.0.bottom/0.1080.1920.1080/67.0.1853.1080@67.0.1853.1080" timestamp="1578847646438" />
+    <state width="1897" height="291" key="GridCell.Tab.0.center" timestamp="1578847646438">
+      <screen x="67" y="0" width="1853" height="1080" />
     </state>
     <state width="1830" height="277" key="GridCell.Tab.0.center/0.1080.1920.1080/67.0.1853.1080@0.1080.1920.1080" timestamp="1577211989600" />
-    <state width="1897" height="287" key="GridCell.Tab.0.center/0.1080.1920.1080/67.0.1853.1080@67.0.1853.1080" timestamp="1577159983708" />
-    <state width="1830" height="277" key="GridCell.Tab.0.left" timestamp="1577211989600">
-      <screen x="0" y="1080" width="1920" height="1080" />
+    <state width="1897" height="291" key="GridCell.Tab.0.center/0.1080.1920.1080/67.0.1853.1080@67.0.1853.1080" timestamp="1578847646438" />
+    <state width="1897" height="291" key="GridCell.Tab.0.left" timestamp="1578847646438">
+      <screen x="67" y="0" width="1853" height="1080" />
     </state>
     <state width="1830" height="277" key="GridCell.Tab.0.left/0.1080.1920.1080/67.0.1853.1080@0.1080.1920.1080" timestamp="1577211989600" />
-    <state width="1897" height="287" key="GridCell.Tab.0.left/0.1080.1920.1080/67.0.1853.1080@67.0.1853.1080" timestamp="1577159983708" />
-    <state width="1830" height="277" key="GridCell.Tab.0.right" timestamp="1577211989600">
-      <screen x="0" y="1080" width="1920" height="1080" />
+    <state width="1897" height="291" key="GridCell.Tab.0.left/0.1080.1920.1080/67.0.1853.1080@67.0.1853.1080" timestamp="1578847646438" />
+    <state width="1897" height="291" key="GridCell.Tab.0.right" timestamp="1578847646438">
+      <screen x="67" y="0" width="1853" height="1080" />
     </state>
     <state width="1830" height="277" key="GridCell.Tab.0.right/0.1080.1920.1080/67.0.1853.1080@0.1080.1920.1080" timestamp="1577211989600" />
-    <state width="1897" height="287" key="GridCell.Tab.0.right/0.1080.1920.1080/67.0.1853.1080@67.0.1853.1080" timestamp="1577159983708" />
+    <state width="1897" height="291" key="GridCell.Tab.0.right/0.1080.1920.1080/67.0.1853.1080@67.0.1853.1080" timestamp="1578847646438" />
     <state x="452" y="170" width="1016" height="738" key="SettingsEditor" timestamp="1578803449896">
       <screen x="67" y="0" width="1853" height="1080" />
     </state>
     <state x="452" y="170" width="1016" height="738" key="SettingsEditor/0.1080.1920.1080/67.0.1853.1080@67.0.1853.1080" timestamp="1578803449896" />
-    <state x="509" y="1327" width="800" height="536" key="Vcs.Push.Dialog.v2" timestamp="1577210475637">
-      <screen x="0" y="1080" width="1920" height="1080" />
-    </state>
-    <state x="509" y="1327" key="Vcs.Push.Dialog.v2/0.1080.1920.1080/67.0.1853.1080@0.1080.1920.1080" timestamp="1577210475637" />
-    <state x="558" y="255" width="800" height="536" key="Vcs.Push.Dialog.v2/0.1080.1920.1080/67.0.1853.1080@67.0.1853.1080" timestamp="1577159048660" />
-    <state x="620" y="364" key="com.intellij.ide.util.TipDialog" timestamp="1577209803072">
+    <state x="558" y="247" width="800" height="536" key="Vcs.Push.Dialog.v2" timestamp="1578803678125">
       <screen x="67" y="0" width="1853" height="1080" />
     </state>
-    <state x="620" y="364" key="com.intellij.ide.util.TipDialog/0.1080.1920.1080/67.0.1853.1080@67.0.1853.1080" timestamp="1577209803072" />
+    <state x="509" y="1327" key="Vcs.Push.Dialog.v2/0.1080.1920.1080/67.0.1853.1080@0.1080.1920.1080" timestamp="1577210475637" />
+    <state x="558" y="247" width="800" height="536" key="Vcs.Push.Dialog.v2/0.1080.1920.1080/67.0.1853.1080@67.0.1853.1080" timestamp="1578803678125" />
+    <state x="620" y="356" key="com.intellij.ide.util.TipDialog" timestamp="1578845373928">
+      <screen x="67" y="0" width="1853" height="1080" />
+    </state>
+    <state x="620" y="356" key="com.intellij.ide.util.TipDialog/0.1080.1920.1080/67.0.1853.1080@67.0.1853.1080" timestamp="1578845373928" />
+    <state x="623" y="231" width="672" height="678" key="search.everywhere.popup" timestamp="1578845995599">
+      <screen x="67" y="0" width="1853" height="1080" />
+    </state>
+    <state x="623" y="231" width="672" height="678" key="search.everywhere.popup/0.1080.1920.1080/67.0.1853.1080@67.0.1853.1080" timestamp="1578845995599" />
   </component>
 </project>
