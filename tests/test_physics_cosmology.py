@@ -22,6 +22,7 @@ from physics.cosmology import Cosmology
 from physics.constants import CLIGHT, GRAVITY
 from physics.units import MEGAPARSEC
 
+
 class TestCosmology(object):
     def test_init(self):
         """
@@ -67,7 +68,6 @@ class TestCosmology(object):
 
         H_0 = 100. * h_0 * 1.0e5 / MEGAPARSEC
         d_h_reference = CLIGHT / H_0
-
         assert d_h == pytest.approx(d_h_reference)
 
     def test_hubble_time(self):
@@ -80,7 +80,6 @@ class TestCosmology(object):
 
         H_0 = 100. * h_0 * 1.0e5 / MEGAPARSEC
         t_h_reference = 1.0 / H_0
-
         assert t_h == pytest.approx(t_h_reference)
 
     def test_critical_density(self):
@@ -93,20 +92,40 @@ class TestCosmology(object):
 
         H_0 = 100. * h_0 * 1.0e5 / MEGAPARSEC
         rho_c_reference = 3.0 * H_0 * H_0 / 8.0 / np.pi / GRAVITY
-
         assert rho_c == pytest.approx(rho_c_reference)
 
+    def test_omega_curvature(self):
         """
-        ToDo: Omega curvature
+        Omega curvature
         """
+        o_m = 0.20
+        o_l = 0.72
+        my_cosmology = Cosmology(omega_matter=o_m, omega_lambda=o_l)
+        o_k = my_cosmology.omega_curvature
 
-        """
-        ToDo: peculiar velocity
-        """
+        o_k_reference = 1.0 - o_m - o_l
+        assert o_k == pytest.approx(o_k_reference)
 
+    def test_peculiar_velocity(self):
         """
-        ToDo: redshift to scalefactor, scalefactor to redshift
+        peculiar velocity
         """
+        vpec = Cosmology.peculiar_velocity(redshift=1.0, redshift_observer=0.5)
+
+        vpec_reference = CLIGHT * 0.250
+        assert vpec == pytest.approx(vpec_reference)
+
+    def test_redshift_scalefactor_conversion(self):
+        """
+        redshift to scalefactor, scalefactor to redshift
+        """
+        redshift_reference = 2.4633
+        scalefactor = Cosmology.scalefactor(redshift=redshift_reference)
+        redshift = Cosmology.redshift(scalefactor=scalefactor)
+
+        scalefactor_reference = 1.0/(1.0 + redshift_reference)
+        assert scalefactor == pytest.approx(scalefactor_reference)
+        assert redshift == pytest.approx(redshift_reference)
 
         """
         ToDo: E-factor

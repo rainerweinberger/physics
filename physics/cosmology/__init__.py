@@ -123,3 +123,31 @@ class Cosmology(object):
             critical density of the Universe
         """
         return np.float64(300.0 * self._hubble_constant * self._hubble_constant / 8.0 / np.pi / units.PARSEC / units.PARSEC / constants.GRAVITY)
+
+    @property
+    def omega_curvature(self) -> np.float64:
+        """
+        :return: np.float64
+            curvature parameter
+        """
+        return np.float64(1.0 - self._omega_lambda - self._omega_matter)
+
+    @staticmethod
+    def peculiar_velocity(redshift: np.float64 = 1.0, redshift_observer: np.float64 = 0.0) -> np.float64:
+        """
+        :param redshift: np.float64
+            redshift of emission
+        :param redshift_observer: np.float64
+            redshift of observer
+        :return: np.float64
+            peculiar velocity
+        """
+        return constants.CLIGHT * (redshift - redshift_observer) / (1.0 + redshift)
+
+    @staticmethod
+    def scalefactor(redshift: np.float64, scalefactor_reference: np.float64 = 1.0) -> np.float64:
+        return np.float64(scalefactor_reference / (1.0 + redshift))
+
+    @staticmethod
+    def redshift(scalefactor: np.float64, scalefactor_reference: np.float64 = 1.0) -> np.float64:
+        return np.float64(scalefactor_reference / scalefactor - 1.0)
