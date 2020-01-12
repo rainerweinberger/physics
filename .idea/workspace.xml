@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0da2679b-bd44-4bf2-9203-554e8add2b87" name="Default Changelist" comment="created submodule units">
+    <list default="true" id="0da2679b-bd44-4bf2-9203-554e8add2b87" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/physics/cosmology/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/test_physics_cosmology.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_Physics.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_physics.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_PhysicsConstants.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_physics_constants.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_PhysicsUnits.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_physics_units.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -150,7 +149,14 @@
       <option name="project" value="LOCAL" />
       <updated>1577210472411</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="renaming of test scripts">
+      <created>1578803503453</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1578803503453</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -159,7 +165,8 @@
     <MESSAGE value="setup script to install as library" />
     <MESSAGE value="first unit tests" />
     <MESSAGE value="created submodule units" />
-    <option name="LAST_COMMIT_MESSAGE" value="created submodule units" />
+    <MESSAGE value="renaming of test scripts" />
+    <option name="LAST_COMMIT_MESSAGE" value="renaming of test scripts" />
   </component>
   <component name="WindowStateProjectService">
     <state x="368" y="1257" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1577210343002">
@@ -171,11 +178,11 @@
       <screen x="67" y="0" width="1853" height="1080" />
     </state>
     <state x="657" y="340" width="601" height="398" key="#com.intellij.fileTypes.FileTypeChooser/0.1080.1920.1080/67.0.1853.1080@67.0.1853.1080" timestamp="1577209813349" />
-    <state x="521" y="1173" width="775" height="815" key="CommitChangelistDialog2" timestamp="1577213321787">
-      <screen x="0" y="1080" width="1920" height="1080" />
+    <state x="570" y="101" width="775" height="815" key="CommitChangelistDialog2" timestamp="1578803503347">
+      <screen x="67" y="0" width="1853" height="1080" />
     </state>
     <state x="521" y="1173" width="775" height="815" key="CommitChangelistDialog2/0.1080.1920.1080/67.0.1853.1080@0.1080.1920.1080" timestamp="1577213321787" />
-    <state x="570" y="109" width="775" height="811" key="CommitChangelistDialog2/0.1080.1920.1080/67.0.1853.1080@67.0.1853.1080" timestamp="1577159040595" />
+    <state x="570" y="101" width="775" height="811" key="CommitChangelistDialog2/0.1080.1920.1080/67.0.1853.1080@67.0.1853.1080" timestamp="1578803503347" />
     <state x="688" y="1318" width="424" height="492" key="FileChooserDialogImpl" timestamp="1577210340318">
       <screen x="0" y="1080" width="1920" height="1080" />
     </state>
