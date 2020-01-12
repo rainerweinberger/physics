@@ -115,3 +115,11 @@ class Cosmology(object):
             hubble time in s
         """
         return np.float64(0.1 / self._hubble_constant * units.PARSEC)
+
+    @property
+    def critical_density(self) -> np.float64:
+        """
+        :return: np.float64
+            critical density of the Universe
+        """
+        return np.float64(300.0 * self._hubble_constant * self._hubble_constant / 8.0 / np.pi / units.PARSEC / units.PARSEC / constants.GRAVITY)

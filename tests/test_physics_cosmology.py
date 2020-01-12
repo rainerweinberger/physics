@@ -17,8 +17,9 @@
 # along with physics.  If not, see <https://www.gnu.org/licenses/>.
 
 import pytest
+import numpy as np
 from physics.cosmology import Cosmology
-from physics.constants import CLIGHT
+from physics.constants import CLIGHT, GRAVITY
 from physics.units import MEGAPARSEC
 
 class TestCosmology(object):
@@ -82,13 +83,18 @@ class TestCosmology(object):
 
         assert t_h == pytest.approx(t_h_reference)
 
+    def test_critical_density(self):
         """
-        ToDo: matter density
+        critical density
         """
+        h_0 = 0.6774
+        my_cosmology = Cosmology(hubble_constant=h_0)
+        rho_c = my_cosmology.critical_density
 
-        """
-        ToDo: lambda
-        """
+        H_0 = 100. * h_0 * 1.0e5 / MEGAPARSEC
+        rho_c_reference = 3.0 * H_0 * H_0 / 8.0 / np.pi / GRAVITY
+
+        assert rho_c == pytest.approx(rho_c_reference)
 
         """
         ToDo: Omega curvature
