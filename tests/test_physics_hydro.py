@@ -82,6 +82,8 @@ class TestHydro(object):
         assert state.pressure == pytest.approx(1.0 / 3.0)
         # thermal energy
         assert state.thermal_energy == pytest.approx(1.0)
+        # sound speed
+        assert state.sound_speed == pytest.approx(np.sqrt(5./9.))
 
         # total energy
         assert state.total_energy == pytest.approx(2.25)

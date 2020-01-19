@@ -166,6 +166,14 @@ class HydroState(object):
         return self._specific_thermal_energy * self._mass
 
     @property
+    def sound_speed_squared(self):
+        return self._gamma * (self._gamma - 1.0) * self._specific_thermal_energy
+
+    @property
+    def sound_speed(self):
+        return np.sqrt(self.sound_speed_squared)
+
+    @property
     def total_energy(self):
         return self.thermal_energy + self.kinetic_energy
 
