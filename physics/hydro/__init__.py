@@ -20,10 +20,12 @@ import numpy as np
 
 FloatType = np.float64
 
+
 class HydroState(object):
     """
     class for hydrodynamic state
     """
+
     def __init__(self,
                  mass=None,
                  density=None,
@@ -47,7 +49,56 @@ class HydroState(object):
         self._hubble_param = FloatType(hubble_param)
         self._scale_factor = FloatType(scale_factor)
 
+    """ factories """
+
+    @staticmethod
+    def from_conserved_variables(volume=None,
+                                 mass=None,
+                                 momentum=None,
+                                 thermal_energy=None,
+                                 gamma: FloatType = FloatType(5.0 / 3.0),
+                                 unit_length_in_cm: FloatType = FloatType(1.0),
+                                 unit_mass_in_g: FloatType = FloatType(1.0),
+                                 unit_velocity_in_cm_per_s: FloatType = FloatType(1.0),
+                                 hubble_param: FloatType = FloatType(1.0),
+                                 scale_factor: FloatType = FloatType(1.0)
+                                 ):
+        """ create HydroState from conserved variables """
+        _mass = np.array(mass, dtype=FloatType, ndmin=1)
+        _momentum = np.array(momentum, dtype=FloatType, ndmin=2)
+        density = _mass / np.array(volume, dtype=FloatType, ndmin=1)
+        velocity = np.zeros(_momentum.shape)
+        for dim in np.arange(_momentum.shape[1]):
+            velocity[:, dim] = _momentum[:, dim] / _mass
+        specific_thermal_energy = thermal_energy / _mass
+        return HydroState(mass=_mass, density=density, velocity=velocity,
+                          specific_thermal_energy=specific_thermal_energy, gamma=gamma,
+                          unit_length_in_cm=unit_length_in_cm, unit_mass_in_g=unit_mass_in_g,
+                          unit_velocity_in_cm_per_s=unit_velocity_in_cm_per_s, hubble_param=hubble_param,
+                          scale_factor=scale_factor)
+
+    @staticmethod
+    def from_primitive_variables(volume=None,
+                                 density=None,
+                                 velocity=None,
+                                 specific_thermal_energy=None,
+                                 gamma: FloatType = FloatType(5.0 / 3.0),
+                                 unit_length_in_cm: FloatType = FloatType(1.0),
+                                 unit_mass_in_g: FloatType = FloatType(1.0),
+                                 unit_velocity_in_cm_per_s: FloatType = FloatType(1.0),
+                                 hubble_param: FloatType = FloatType(1.0),
+                                 scale_factor: FloatType = FloatType(1.0)
+                                 ):
+        """ create HydroState from primitive variables """
+        mass = density * volume
+        return HydroState(mass=mass, density=density, velocity=velocity,
+                          specific_thermal_energy=specific_thermal_energy, gamma=gamma,
+                          unit_length_in_cm=unit_length_in_cm, unit_mass_in_g=unit_mass_in_g,
+                          unit_velocity_in_cm_per_s=unit_velocity_in_cm_per_s, hubble_param=hubble_param,
+                          scale_factor=scale_factor)
+
     """ magic methods """
+
     def __str__(self):
         out = "hydro state:"
         out += "\n mass = " + str(self._mass)
@@ -64,7 +115,16 @@ class HydroState(object):
         out += "; specific thermal energy = " + str(self._specific_thermal_energy) + " >"
         return out
 
+    def __eq__(self, other):
+        if np.all(self.mass == other.mass) \
+                and np.all(self.density == other.density) \
+                and np.all(self.velocity == other.velocity) \
+                and np.all(self.specific_thermal_energy == other.specific_thermal_energy):
+            return True
+        return False
+
     """ properties """
+
     @property
     def mass(self):
         return self._mass
@@ -87,7 +147,7 @@ class HydroState(object):
 
     @property
     def kinetic_energy(self):
-        return 0.5 * self._mass * (self._velocity[:, 0]**2 + self._velocity[:, 1]**2 + self._velocity[:, 2]**2)
+        return 0.5 * self._mass * (self._velocity[:, 0] ** 2 + self._velocity[:, 1] ** 2 + self._velocity[:, 2] ** 2)
 
     @property
     def specific_thermal_energy(self):
@@ -110,4 +170,3 @@ class HydroState(object):
         return self.thermal_energy + self.kinetic_energy
 
     """ functions that use external information """
-

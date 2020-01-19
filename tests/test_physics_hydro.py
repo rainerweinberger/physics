@@ -24,14 +24,25 @@ from physics.hydro import HydroState
 class TestHydro(object):
     def test_hydro_state_init(self):
         """
-        initialization
+        initialization via constructor and factories
+
+        comparison operation
         :return:
         """
         HydroState()
 
+        SecondState = HydroState.from_conserved_variables(volume=2.0, mass=1.0, momentum=[0.5, 0.5, 1],
+                                                          thermal_energy=2.0)
+        ThirdState = HydroState.from_primitive_variables(volume=2.0, density=0.5, velocity=[0.5, 0.5, 1],
+                                                         specific_thermal_energy=2.0)
+
+        assert SecondState == ThirdState
+
     def test_hydro_state_magic_methods(self):
         """
-        magic (dunder) methods of a hydro state
+        magic (dunder) methods of a hydro state;
+
+        note that __eq__ is checked already in initialization test
         :return:
         """
         state = HydroState(density=1.0, mass=2.0, velocity=[1.0, 0.0, 0.5], specific_thermal_energy=0.5)
@@ -68,7 +79,7 @@ class TestHydro(object):
         # thermal energy density
         assert state.thermal_energy_density == pytest.approx(0.5)
         # pressure
-        assert state.pressure == pytest.approx(1.0/3.0)
+        assert state.pressure == pytest.approx(1.0 / 3.0)
         # thermal energy
         assert state.thermal_energy == pytest.approx(1.0)
 
