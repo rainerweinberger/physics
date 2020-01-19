@@ -28,7 +28,7 @@ class HydroState(object):
                  mass=None,
                  density=None,
                  velocity=None,
-                 specific_energy=None,
+                 specific_thermal_energy=None,
                  gamma: FloatType = FloatType(5.0 / 3.0),
                  unit_length_in_cm: FloatType = FloatType(1.0),
                  unit_mass_in_g: FloatType = FloatType(1.0),
@@ -36,16 +36,16 @@ class HydroState(object):
                  hubble_param: FloatType = FloatType(1.0),
                  scale_factor: FloatType = FloatType(1.0)
                  ):
-        self._mass = mass
-        self._density = density
-        self._velocity = velocity
-        self._specific_energy = specific_energy
-        self._gamma = gamma
-        self._unit_length_in_cm = unit_length_in_cm
-        self._unit_mass_in_g = unit_mass_in_g
-        self._unit_velocity_in_cm_per_s = unit_velocity_in_cm_per_s
-        self._hubble_param = hubble_param
-        self._scale_factor = scale_factor
+        self._mass = np.array(mass, dtype=FloatType, ndmin=1)
+        self._density = np.array(density, dtype=FloatType, ndmin=1)
+        self._velocity = np.array(velocity, dtype=FloatType, ndmin=2)
+        self._specific_thermal_energy = np.array(specific_thermal_energy, dtype=FloatType, ndmin=1)
+        self._gamma = FloatType(gamma)
+        self._unit_length_in_cm = FloatType(unit_length_in_cm)
+        self._unit_mass_in_g = FloatType(unit_mass_in_g)
+        self._unit_velocity_in_cm_per_s = FloatType(unit_velocity_in_cm_per_s)
+        self._hubble_param = FloatType(hubble_param)
+        self._scale_factor = FloatType(scale_factor)
 
     """ magic methods """
     def __str__(self):
@@ -53,11 +53,61 @@ class HydroState(object):
         out += "\n mass = " + str(self._mass)
         out += "\n density = " + str(self._density)
         out += "\n velocity = " + str(self._velocity)
-        out += "\n specific energy = " + str(self._specific_energy)
+        out += "\n specific thermal energy = " + str(self._specific_thermal_energy)
+        return out
+
+    def __repr__(self):
+        out = "hydro state: < "
+        out += "mass = " + str(self._mass)
+        out += "; density = " + str(self._density)
+        out += "; velocity = " + str(self._velocity)
+        out += "; specific thermal energy = " + str(self._specific_thermal_energy) + " >"
         return out
 
     """ properties """
     @property
+    def mass(self):
+        return self._mass
+
+    @property
+    def density(self):
+        return self._density
+
+    @property
     def volume(self):
         return self._mass / self._density
+
+    @property
+    def velocity(self):
+        return self._velocity
+
+    @property
+    def momentum(self):
+        return self._velocity * self._mass
+
+    @property
+    def kinetic_energy(self):
+        return 0.5 * self._mass * (self._velocity[:, 0]**2 + self._velocity[:, 1]**2 + self._velocity[:, 2]**2)
+
+    @property
+    def specific_thermal_energy(self):
+        return self._specific_thermal_energy
+
+    @property
+    def thermal_energy_density(self):
+        return self._specific_thermal_energy * self._density
+
+    @property
+    def pressure(self):
+        return (self._gamma - 1.0) * self._density * self._specific_thermal_energy
+
+    @property
+    def thermal_energy(self):
+        return self._specific_thermal_energy * self._mass
+
+    @property
+    def total_energy(self):
+        return self.thermal_energy + self.kinetic_energy
+
+    """ functions that use external information """
 
