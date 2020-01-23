@@ -20,7 +20,7 @@ import pytest
 import numpy as np
 from physics.cosmology import Cosmology
 from physics.constants import CLIGHT, GRAVITY
-from physics.units import MEGAPARSEC
+from physics.units import MEGAPARSEC, SEC_PER_GIGAYEAR
 
 
 class TestCosmology(object):
@@ -123,7 +123,7 @@ class TestCosmology(object):
         scalefactor = Cosmology.scalefactor(redshift=redshift_reference)
         redshift = Cosmology.redshift(scalefactor=scalefactor)
 
-        scalefactor_reference = 1.0/(1.0 + redshift_reference)
+        scalefactor_reference = 1.0 / (1.0 + redshift_reference)
         assert scalefactor == pytest.approx(scalefactor_reference)
         assert redshift == pytest.approx(redshift_reference)
 
@@ -159,9 +159,37 @@ class TestCosmology(object):
         ToDo: Comoving volume
         """
 
+    def test_lookback_time(self):
         """
-        ToDo: Lookback time
+        Lookback time; compare to some pre-calculated ones (used yt to calculate it)
         """
+        redshifts = np.array([0.0, 0.25, 0.5, 0.75, 1.0, 2.25, 3.75, 4.34, 5.0, 7.0, 1100.0])
+        lookback_ref_p16 = np.array(
+            [0.0, 3.0351346358407234, 5.193918814993813, 6.7653096884483475, 7.93569077168917, 10.87878447278143,
+             12.136004047592554, 12.403029538446914, 12.62666394724965, 13.03808995523595, 13.802244387905864])
+
+        # # comparison with yt
+        # import yt.utilities.cosmology as yt_cosmo
+        # mycosmo = Cosmology()['planck2016']
+        # cosmo = yt_cosmo.Cosmology(hubble_constant=mycosmo['hubble_constant'],
+        #                            omega_matter=mycosmo['omega_matter'],
+        #                            omega_lambda=mycosmo['omega_lambda'],
+        #                            omega_curvature=0.0,
+        #                            unit_registry=None,
+        #                            unit_system="cgs",
+        #                            use_dark_factor=False,
+        #                            w_0=-1.0,
+        #                            w_a=0.0)
+        # for redshift in redshifts:
+        #     print('redshift: ', redshift, 'lookback: ',
+        #           (cosmo.t_from_z(0.0).in_units('Gyr') - cosmo.t_from_z(redshift).in_units('Gyr')))
+
+        cosmo2 = Cosmology.from_literature(source="planck2016")
+        lookback = []
+        for redshift in redshifts:
+            lookback.append(cosmo2.look_back_time(redshift)/SEC_PER_GIGAYEAR)
+
+        assert np.array(lookback) == pytest.approx(lookback_ref_p16)
 
         """
         ToDo: Probability of intersecting objects

@@ -151,3 +151,14 @@ class Cosmology(object):
     @staticmethod
     def redshift(scalefactor: np.float64, scalefactor_reference: np.float64 = 1.0) -> np.float64:
         return np.float64(scalefactor_reference / scalefactor - 1.0)
+
+    def _integrand_look_back_time(self, a):
+        integrand = 1. / a / self._hubble_constant / units.HUBBLE
+        integrand /= np.sqrt(self._omega_matter / a / a / a + self.omega_curvature / a / a + self._omega_lambda)
+        return integrand
+
+    def look_back_time(self, redshift):
+        scalefactor = self.scalefactor(redshift)
+        a_array = np.linspace(scalefactor, 1.0, 5000)
+        integrand_array = self._integrand_look_back_time(a_array)
+        return np.trapz(integrand_array, a_array)
