@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="0da2679b-bd44-4bf2-9203-554e8add2b87" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/physics/cosmology/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/physics/cosmology/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_physics_cosmology.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_physics_cosmology.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -244,7 +243,14 @@
       <option name="project" value="LOCAL" />
       <updated>1579405391799</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="added method look_back_time in cosmology">
+      <created>1579746358706</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1579746358706</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -263,7 +269,8 @@
     <MESSAGE value="added some properties to physics.hydro.HydroState" />
     <MESSAGE value="added factories to physics.hydro.HydroState&#10;to create state from conserved and from primitive variables" />
     <MESSAGE value="added more properties to physics.hydro.HydroState" />
-    <option name="LAST_COMMIT_MESSAGE" value="added more properties to physics.hydro.HydroState" />
+    <MESSAGE value="added method look_back_time in cosmology" />
+    <option name="LAST_COMMIT_MESSAGE" value="added method look_back_time in cosmology" />
   </component>
   <component name="WindowStateProjectService">
     <state x="422" y="191" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1578971573624">
@@ -276,11 +283,11 @@
       <screen x="67" y="0" width="1853" height="1080" />
     </state>
     <state x="657" y="340" width="601" height="398" key="#com.intellij.fileTypes.FileTypeChooser/0.1080.1920.1080/67.0.1853.1080@67.0.1853.1080" timestamp="1577209813349" />
-    <state x="570" y="45" width="775" height="815" key="CommitChangelistDialog2" timestamp="1579405391683">
+    <state x="570" y="37" width="775" height="815" key="CommitChangelistDialog2" timestamp="1579746358628">
       <screen x="67" y="0" width="1853" height="1080" />
     </state>
     <state x="521" y="1173" width="775" height="815" key="CommitChangelistDialog2/0.1080.1920.1080/67.0.1853.1080@0.1080.1920.1080" timestamp="1577213321787" />
-    <state x="570" y="45" width="775" height="811" key="CommitChangelistDialog2/0.1080.1920.1080/67.0.1853.1080@67.0.1853.1080" timestamp="1579405391683" />
+    <state x="570" y="37" width="775" height="811" key="CommitChangelistDialog2/0.1080.1920.1080/67.0.1853.1080@67.0.1853.1080" timestamp="1579746358628" />
     <state x="570" y="86" key="CommitChangelistDialog2/67.27.1853.1052@67.27.1853.1052" timestamp="1578972052513" />
     <state x="731" y="259" width="424" height="492" key="FileChooserDialogImpl" timestamp="1578971572075">
       <screen x="67" y="27" width="1853" height="1052" />
@@ -320,11 +327,11 @@
       <screen x="67" y="0" width="1853" height="1080" />
     </state>
     <state x="452" y="162" width="1016" height="738" key="SettingsEditor/0.1080.1920.1080/67.0.1853.1080@67.0.1853.1080" timestamp="1579492657400" />
-    <state x="558" y="223" width="800" height="536" key="Vcs.Push.Dialog.v2" timestamp="1579405393500">
+    <state x="558" y="215" width="800" height="536" key="Vcs.Push.Dialog.v2" timestamp="1579746364387">
       <screen x="67" y="0" width="1853" height="1080" />
     </state>
     <state x="509" y="1327" key="Vcs.Push.Dialog.v2/0.1080.1920.1080/67.0.1853.1080@0.1080.1920.1080" timestamp="1577210475637" />
-    <state x="558" y="223" width="800" height="536" key="Vcs.Push.Dialog.v2/0.1080.1920.1080/67.0.1853.1080@67.0.1853.1080" timestamp="1579405393500" />
+    <state x="558" y="215" width="800" height="536" key="Vcs.Push.Dialog.v2/0.1080.1920.1080/67.0.1853.1080@67.0.1853.1080" timestamp="1579746364387" />
     <state x="558" y="260" key="Vcs.Push.Dialog.v2/67.27.1853.1052@67.27.1853.1052" timestamp="1578972056747" />
     <state x="620" y="356" key="com.intellij.ide.util.TipDialog" timestamp="1578845373928">
       <screen x="67" y="0" width="1853" height="1080" />
