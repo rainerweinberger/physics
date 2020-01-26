@@ -83,9 +83,33 @@ class TestHydro(object):
         # thermal energy
         assert state.thermal_energy == pytest.approx(1.0)
         # sound speed
-        assert state.sound_speed == pytest.approx(np.sqrt(5./9.))
+        assert state.sound_speed == pytest.approx(np.sqrt(5. / 9.))
 
         # total energy
         assert state.total_energy == pytest.approx(2.25)
 
-    # ToDo: cooling luminosity
+    def test_hydro_state_cooling_luminosity(self):
+        """ cooling luminosity """
+        cooling_rate = np.array([-8.7344289e-23, -9.4096156e-23, -9.4876307e-23, -1.0734809e-22,
+                                 -9.4646093e-23, -9.4072881e-23, -1.2774670e-22, -9.3815756e-23,
+                                 -8.9719915e-23, -8.7572850e-23])
+        density = np.array([4.4664993e-08, 4.0362085e-08, 3.7757609e-08, 2.9720892e-08,
+                            4.2373319e-08, 4.0239804e-08, 2.2796231e-08, 4.0245101e-08,
+                            4.3894516e-08, 4.1929820e-08])
+        mass = np.array([1.9719103e-08, 2.3327638e-08, 4.2077549e-08, 2.9918770e-08,
+                         2.9821706e-08, 2.9963097e-08, 7.7762463e-09, 2.5147488e-08,
+                         2.7254773e-08, 2.4179668e-08])
+        unit_length_in_cm = 3.085678e+21
+        unit_mass_in_g = 1.989e+43
+        unit_velocity_in_cm_per_s = 100000.0
+        hubble_param = 0.6774
+
+        state = HydroState(density=density,
+                           mass=mass,
+                           unit_length_in_cm=unit_length_in_cm,
+                           unit_mass_in_g=unit_mass_in_g,
+                           unit_velocity_in_cm_per_s=unit_velocity_in_cm_per_s,
+                           hubble_param=hubble_param)
+        cooling_lum = state.cooling_luminosity(cooling_rate)
+
+        assert np.sum(cooling_lum) == pytest.approx(-1.8049498952448396e+33)

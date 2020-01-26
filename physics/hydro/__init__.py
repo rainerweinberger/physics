@@ -17,6 +17,7 @@
 # along with physics.  If not, see <https://www.gnu.org/licenses/>.
 
 import numpy as np
+import physics.constants as constants
 
 FloatType = np.float64
 
@@ -123,51 +124,70 @@ class HydroState(object):
             return True
         return False
 
-    """ properties """
+    """ properties (proper cgs units!)"""
 
     @property
     def mass(self):
-        return self._mass
+        return self._mass * self._unit_mass_in_g / self._hubble_param
 
     @property
     def density(self):
-        return self._density
+        unit_density = self._unit_mass_in_g / self._unit_length_in_cm / self._unit_length_in_cm / self._unit_length_in_cm
+        unit_density *= self._hubble_param * self._hubble_param / self._scale_factor / self._scale_factor / self._scale_factor
+        return self._density * unit_density
 
     @property
     def volume(self):
-        return self._mass / self._density
+        unit_volume = self._unit_length_in_cm * self._unit_length_in_cm * self._unit_length_in_cm
+        unit_volume *= self._scale_factor * self._scale_factor * self._scale_factor
+        unit_volume /= self._hubble_param * self._hubble_param * self._hubble_param
+        return self._mass / self._density * unit_volume
 
     @property
     def velocity(self):
-        return self._velocity
+        return self._velocity * self._unit_velocity_in_cm_per_s * np.sqrt(self._scale_factor)
 
     @property
     def momentum(self):
-        return self._velocity * self._mass
+        unit_momentum = self._unit_velocity_in_cm_per_s * self._unit_mass_in_g
+        unit_momentum /= self._hubble_param * self._hubble_param / np.sqrt(self._scale_factor)
+        return self._velocity * self._mass * unit_momentum
 
     @property
     def kinetic_energy(self):
-        return 0.5 * self._mass * (self._velocity[:, 0] ** 2 + self._velocity[:, 1] ** 2 + self._velocity[:, 2] ** 2)
+        unit_energy = self._unit_mass_in_g * self._unit_velocity_in_cm_per_s ** 2
+        unit_energy *= self._scale_factor / self._hubble_param
+        v_squared = (self._velocity[:, 0] ** 2 + self._velocity[:, 1] ** 2 + self._velocity[:, 2] ** 2)
+        return 0.5 * self._mass * v_squared * unit_energy
 
     @property
     def specific_thermal_energy(self):
-        return self._specific_thermal_energy
+        unit_spec_energy = self._unit_velocity_in_cm_per_s ** 2
+        return self._specific_thermal_energy * unit_spec_energy
 
     @property
     def thermal_energy_density(self):
-        return self._specific_thermal_energy * self._density
+        unit_energy_density = self._unit_mass_in_g * self._unit_velocity_in_cm_per_s ** 2
+        unit_energy_density /= self._unit_length_in_cm ** 3
+        unit_energy_density *= self._hubble_param ** 2 / self._scale_factor ** 2
+        return self._specific_thermal_energy * self._density * unit_energy_density
 
     @property
     def pressure(self):
-        return (self._gamma - 1.0) * self._density * self._specific_thermal_energy
+        unit_pressure = self._unit_mass_in_g * self._unit_velocity_in_cm_per_s ** 2
+        unit_pressure /= self._unit_length_in_cm ** 3
+        unit_pressure *= self._hubble_param ** 2 / self._scale_factor ** 2
+        return (self._gamma - 1.0) * self._density * self._specific_thermal_energy * unit_pressure
 
     @property
     def thermal_energy(self):
-        return self._specific_thermal_energy * self._mass
+        unit_energy = self._unit_mass_in_g * self._unit_velocity_in_cm_per_s ** 2
+        unit_energy *= self._scale_factor / self._hubble_param
+        return self._specific_thermal_energy * self._mass * unit_energy
 
     @property
     def sound_speed_squared(self):
-        return self._gamma * (self._gamma - 1.0) * self._specific_thermal_energy
+        return self._gamma * (self._gamma - 1.0) * self._specific_thermal_energy * self._unit_velocity_in_cm_per_s ** 2
 
     @property
     def sound_speed(self):
@@ -178,3 +198,16 @@ class HydroState(object):
         return self.thermal_energy + self.kinetic_energy
 
     """ functions that use external information """
+
+    def cooling_luminosity(self, cooling_rate, hydrogen_mass_fraction=0.76):
+        """
+
+        :param cooling_rate: np.array()
+            cooling rate Lambda/n_h^2 in cgs units
+        :param hydrogen_mass_fraction:
+            hydrogen mass fraction of cells
+        :return: np.array
+            cooling luminosity in erg/s
+        """
+        hydrogen_number_density = self.density * hydrogen_mass_fraction / constants.PROTONMASS
+        return cooling_rate * hydrogen_number_density * hydrogen_number_density * self.volume

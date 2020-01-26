@@ -157,7 +157,12 @@ class Cosmology(object):
         integrand /= np.sqrt(self._omega_matter / a / a / a + self.omega_curvature / a / a + self._omega_lambda)
         return integrand
 
-    def look_back_time(self, redshift):
+    def look_back_time(self, redshift: np.float64):
+        """
+        :param redshift: np.float64
+        :return: np.float64
+            time of a given redshift to redshift 0 in seconds
+        """
         scalefactor = self.scalefactor(redshift)
         a_array = np.linspace(scalefactor, 1.0, 5000)
         integrand_array = self._integrand_look_back_time(a_array)
