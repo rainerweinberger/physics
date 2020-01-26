@@ -31,12 +31,11 @@ class TestHydro(object):
         """
         HydroState()
 
-        SecondState = HydroState.from_conserved_variables(volume=2.0, mass=1.0, momentum=[0.5, 0.5, 1],
+        second_state = HydroState.from_conserved_variables(volume=2.0, mass=1.0, momentum=[0.5, 0.5, 1],
                                                           thermal_energy=2.0)
-        ThirdState = HydroState.from_primitive_variables(volume=2.0, density=0.5, velocity=[0.5, 0.5, 1],
+        third_state = HydroState.from_primitive_variables(volume=2.0, density=0.5, velocity=[0.5, 0.5, 1],
                                                          specific_thermal_energy=2.0)
-
-        assert SecondState == ThirdState
+        assert second_state == third_state
 
     def test_hydro_state_magic_methods(self):
         """

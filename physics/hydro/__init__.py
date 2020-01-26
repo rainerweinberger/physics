@@ -98,6 +98,29 @@ class HydroState(object):
                           unit_velocity_in_cm_per_s=unit_velocity_in_cm_per_s, hubble_param=hubble_param,
                           scale_factor=scale_factor)
 
+    @staticmethod
+    def from_arepo_snapshot(snap):
+        """
+        direct interface from inspector gadget library
+        :param snap: arepo.Simulation object (inspector gadget library)
+        :return: HydroState object
+        """
+        scale_factor = 1.0
+        if snap.parameters.ComovingIntegrationOn == 1:
+            scale_factor = snap.time
+        return HydroState(
+            mass=np.array(snap.part0.mass, dtype=FloatType),
+            density=np.array(snap.part0.rho, dtype=FloatType),
+            velocity=np.array(snap.part0.velocity, dtype=FloatType),
+            specific_thermal_energy=np.array(snap.part0.u, dtype=FloatType),
+            gamma=FloatType(5.0 / 3.0),
+            unit_length_in_cm=FloatType(snap.header.UnitLength_in_cm),
+            unit_mass_in_g=FloatType(snap.header.UnitMass_in_g),
+            unit_velocity_in_cm_per_s=FloatType(snap.header.UnitVelocity_in_cm_per_s),
+            hubble_param=FloatType(snap.header.HubbleParam),
+            scale_factor=FloatType(scale_factor)
+        )
+
     """ magic methods """
 
     def __str__(self):
