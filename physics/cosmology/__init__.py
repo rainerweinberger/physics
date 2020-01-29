@@ -122,7 +122,8 @@ class Cosmology(object):
         :return: np.float64
             critical density of the Universe
         """
-        return np.float64(300.0 * self._hubble_constant * self._hubble_constant / 8.0 / np.pi / units.PARSEC / units.PARSEC / constants.GRAVITY)
+        return np.float64(
+            300.0 * self._hubble_constant * self._hubble_constant / 8.0 / np.pi / units.PARSEC / units.PARSEC / constants.GRAVITY)
 
     @property
     def omega_curvature(self) -> np.float64:
@@ -152,12 +153,63 @@ class Cosmology(object):
     def redshift(scalefactor: np.float64, scalefactor_reference: np.float64 = 1.0) -> np.float64:
         return np.float64(scalefactor_reference / scalefactor - 1.0)
 
+    def _e_factor(self, redshift):
+        redshift_plus_one = (redshift + 1.0)
+        return np.sqrt(self._omega_matter * redshift_plus_one * redshift_plus_one * redshift_plus_one +
+                       self.omega_curvature * redshift_plus_one * redshift_plus_one +
+                       self._omega_lambda)
+
+    def comoving_distance_line_of_sight(self, redshift: np.float64):
+        redshift_array = np.linspace(0, redshift, 5000)
+        integrand_array = 1. / self._e_factor(redshift_array)
+        return self.hubble_distance * np.trapz(integrand_array, redshift_array)
+
+    def comoving_distance_transverse(self, redshift: np.float64):
+        if self.omega_curvature > 1e-12:
+            sqrt_omega_c = np.sqrt(self.omega_curvature)
+            fac = np.sinh(sqrt_omega_c * self.comoving_distance_line_of_sight(redshift) / self.hubble_distance)
+            return self.hubble_distance * fac / sqrt_omega_c
+        elif self.omega_curvature < -1e-12:
+            sqrt_omega_c = np.sqrt(-self.omega_curvature)
+            fac = np.sin(sqrt_omega_c * self.comoving_distance_line_of_sight(redshift) / self.hubble_distance)
+            return self.hubble_distance * fac / sqrt_omega_c
+        else:
+            return self.comoving_distance_line_of_sight(redshift)
+
+    def angular_diameter_distance(self, redshift: np.float64):
+        return self.comoving_distance_transverse(redshift) / (1.0 + redshift)
+
+    def luminosity_distance(self, redshift: np.float64):
+        return (1.0 + redshift) * self.comoving_distance_transverse(redshift)
+
+    def distance_modulus(self, redshift: np.float64):
+        return 5.0 * np.log10(self.luminosity_distance(redshift) / 10. / units.PARSEC)
+
+    def comoving_volume(self, redshift: np.float64):
+        d_m = self.comoving_distance_transverse(redshift)
+        if self.omega_curvature > 1e-12:
+            d_h = self.hubble_distance
+            sqrt_omega_c = np.sqrt(self.omega_curvature)
+            prefac = 2.0 * np.pi * d_h * d_h * d_h / self.omega_curvature
+            term1 = d_m / d_h * np.sqrt(1.0 + self.omega_curvature * d_m / d_h * d_m / d_h)
+            term2 = 1.0 / sqrt_omega_c * np.arcsinh(sqrt_omega_c * d_m / d_h)
+            return prefac * (term1 - term2)
+        elif self.omega_curvature < -1e-12:
+            d_h = self.hubble_distance
+            sqrt_omega_c = np.sqrt(-self.omega_curvature)
+            prefac = 2.0 * np.pi * self.hubble_distance ** 3 / self.omega_curvature
+            term1 = d_m / d_h * np.sqrt(1.0 + self.omega_curvature * d_m / d_h * d_m / d_h)
+            term2 = 1.0 / sqrt_omega_c * np.arcsin(sqrt_omega_c * d_m / d_h)
+            return prefac * (term1 - term2)
+        else:
+            return 4.0 * np.pi * d_m * d_m * d_m / 3.0
+
     def _integrand_look_back_time(self, a):
         integrand = 1. / a / self._hubble_constant / units.HUBBLE
         integrand /= np.sqrt(self._omega_matter / a / a / a + self.omega_curvature / a / a + self._omega_lambda)
         return integrand
 
-    def look_back_time(self, redshift: np.float64):
+    def lookback_time(self, redshift: np.float64):
         """
         :param redshift: np.float64
         :return: np.float64

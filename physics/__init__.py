@@ -17,16 +17,19 @@
 # along with physics.  If not, see <https://www.gnu.org/licenses/>.
 
 from . import constants
+from . import cosmology
+from . import hydro
 from . import units
+
 
 def print_copyright():
     """
     prints copyright for physics module
     :return:
     """
-    cpyright = "This is a physics package for python\n"\
-               "Copyright (C) 2020  Rainer Weinberger\n"\
-               "\n"\
+    cpyright = "This is a physics package for python\n" \
+               "Copyright (C) 2020  Rainer Weinberger\n" \
+               "\n" \
                "This program is free software: you can redistribute it and/or modify\n"\
                "it under the terms of the GNU General Public License as published by\n"\
                "the Free Software Foundation, either version 3 of the License, or\n"\

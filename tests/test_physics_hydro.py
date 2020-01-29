@@ -32,9 +32,9 @@ class TestHydro(object):
         HydroState()
 
         second_state = HydroState.from_conserved_variables(volume=2.0, mass=1.0, momentum=[0.5, 0.5, 1],
-                                                          thermal_energy=2.0)
+                                                           thermal_energy=2.0)
         third_state = HydroState.from_primitive_variables(volume=2.0, density=0.5, velocity=[0.5, 0.5, 1],
-                                                         specific_thermal_energy=2.0)
+                                                          specific_thermal_energy=2.0)
         assert second_state == third_state
 
     def test_hydro_state_magic_methods(self):
@@ -98,10 +98,10 @@ class TestHydro(object):
         mass = np.array([1.9719103e-08, 2.3327638e-08, 4.2077549e-08, 2.9918770e-08,
                          2.9821706e-08, 2.9963097e-08, 7.7762463e-09, 2.5147488e-08,
                          2.7254773e-08, 2.4179668e-08])
-        unit_length_in_cm = 3.085678e+21
-        unit_mass_in_g = 1.989e+43
-        unit_velocity_in_cm_per_s = 100000.0
-        hubble_param = 0.6774
+        unit_length_in_cm = np.float64(3.085678e+21)
+        unit_mass_in_g = np.float64(1.989e+43)
+        unit_velocity_in_cm_per_s = np.float64(100000.0)
+        hubble_param = np.float64(0.6774)
 
         state = HydroState(density=density,
                            mass=mass,
