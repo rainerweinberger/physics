@@ -68,6 +68,8 @@ class TestHydro(object):
 
         # velocity
         assert state.velocity == pytest.approx(np.array([[1.0, 0.0, 0.5]]))
+        # absolute velocity
+        assert state.absolute_velocity == pytest.approx(np.sqrt(1.25))
         # momentum
         assert state.momentum == pytest.approx(np.array([[2.0, 0.0, 1.0]]))
         # kinetic energy
@@ -83,6 +85,8 @@ class TestHydro(object):
         assert state.thermal_energy == pytest.approx(1.0)
         # sound speed
         assert state.sound_speed == pytest.approx(np.sqrt(5. / 9.))
+        # mach number
+        assert state.mach_number == pytest.approx(np.sqrt(1.25 * 9. / 5.))
 
         # total energy
         assert state.total_energy == pytest.approx(2.25)

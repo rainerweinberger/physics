@@ -171,6 +171,14 @@ class HydroState(object):
         return self._velocity * self._unit_velocity_in_cm_per_s * np.sqrt(self._scale_factor)
 
     @property
+    def absolute_velocity(self):  # ToDo: debug this!!!
+        vel = np.array(self.velocity, dtype=FloatType, ndmin=2)
+        abs_vel = np.zeros(vel.shape[0], dtype=FloatType)
+        for i in np.arange(vel.shape[1]):
+            abs_vel[:] += vel[:, i] * vel[:, i]
+        return np.sqrt(abs_vel)
+
+    @property
     def momentum(self):
         unit_momentum = self._unit_velocity_in_cm_per_s * self._unit_mass_in_g
         unit_momentum /= self._hubble_param * self._hubble_param / np.sqrt(self._scale_factor)
@@ -215,6 +223,10 @@ class HydroState(object):
     @property
     def sound_speed(self):
         return np.sqrt(self.sound_speed_squared)
+
+    @property
+    def mach_number(self):
+        return self.absolute_velocity / self.sound_speed
 
     @property
     def total_energy(self):
