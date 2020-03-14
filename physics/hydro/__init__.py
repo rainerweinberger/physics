@@ -246,3 +246,20 @@ class HydroState(object):
         """
         hydrogen_number_density = self.density * hydrogen_mass_fraction / constants.PROTONMASS
         return cooling_rate * hydrogen_number_density * hydrogen_number_density * self.volume
+
+    def temperature(self, mu=None, hydrogen_fraction=0.76, electron_abundance=1.16):
+        """
+
+        :param mu: (optional)
+            mean molecular weight;  will override hydrogen fraction and electron abundance if set
+        :param hydrogen_fraction:
+            mass fraction in hydrogen to calculate mean molecular weight
+        :param electron_abundance:
+            X_e / X_h number of electrons per hydogen atom
+        :return:
+        """
+        if isinstance(mu, type(None)):
+            mu = 4.0 / (1.0 + 3.0 * hydrogen_fraction + 4.0 * hydrogen_fraction * electron_abundance)
+            print(f'mu = {mu}')
+
+        return (self._gamma - 1.0) * self.specific_thermal_energy / constants.BOLTZMANN * mu * constants.PROTONMASS

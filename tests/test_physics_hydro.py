@@ -19,6 +19,7 @@
 import pytest
 import numpy as np
 from physics.hydro import HydroState
+from physics import constants
 
 
 class TestHydro(object):
@@ -116,3 +117,14 @@ class TestHydro(object):
         cooling_lum = state.cooling_luminosity(cooling_rate)
 
         assert np.sum(cooling_lum) == pytest.approx(-1.8049498952448396e+33)
+
+    def test_hydo_state_temperature(self):
+        """ calculate temperature using mu or Xh and fe """
+        state = HydroState(density=1.0, mass=2.0, velocity=[1.0, 0.0, 0.5], specific_thermal_energy=0.5)
+
+        temperature_ref = 2./3. * 0.5 * 0.5876821814762576 * constants.PROTONMASS / constants.BOLTZMANN
+        temperature1 = state.temperature(mu=0.5876821814762576)
+        temperature2 = state.temperature(hydrogen_fraction=0.76, electron_abundance=1.16)
+
+        assert temperature1 == pytest.approx(temperature_ref)
+        assert temperature2 == pytest.approx(temperature_ref)
