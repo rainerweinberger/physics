@@ -21,7 +21,14 @@ from physics import constants, units
 
 
 class Cosmology(object):
-    literature_values = {'planck2016': {'omega_matter': np.float64(0.3089),
+    literature_values = {'planck2018': {'omega_matter': np.float64(0.315823),
+                                        'omega_lambda': np.float64(0.684097),
+                                        'omega_baryon': np.float64(0.04927),
+                                        'hubble_constant': np.float64(0.6732117),
+                                        'sigma_8': np.float64(0.8101),
+                                        'spectral_index': np.float64(0.9652)
+                                        },  # Planck+2018
+                         'planck2016': {'omega_matter': np.float64(0.3089),
                                         'omega_lambda': np.float64(0.6911),
                                         'omega_baryon': np.float64(0.0486),
                                         'hubble_constant': np.float64(0.6774),
