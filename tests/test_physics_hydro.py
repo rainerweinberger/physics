@@ -176,7 +176,8 @@ class TestMhdState(object):
         :return:
         """
         state = MhdState(density=1.0, mass=2.0, velocity=[1.0, 0.0, 0.5],
-                         specific_thermal_energy=0.5, magnetic_field=[2.0, 1.0, 4.0])
+                         specific_thermal_energy=0.5, magnetic_field=[2.0, 1.0, 4.0],
+                         lorentz_heaviside=True)
 
         # mass
         assert state.mass == pytest.approx(2.0)

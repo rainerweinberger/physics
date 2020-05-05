@@ -9,7 +9,7 @@ class MhdState(HydroState):
                  velocity=None,
                  specific_thermal_energy=None,
                  magnetic_field=None,
-                 lorentz_heaviside=True,
+                 lorentz_heaviside=False,
                  gamma: FloatType = FloatType(5.0 / 3.0),
                  unit_length_in_cm: FloatType = FloatType(1.0),
                  unit_mass_in_g: FloatType = FloatType(1.0),
@@ -38,6 +38,7 @@ class MhdState(HydroState):
                                  momentum=None,
                                  thermal_energy=None,
                                  conserved_magnetic_field=None,
+                                 lorentz_heaviside=False,
                                  gamma: FloatType = FloatType(5.0 / 3.0),
                                  unit_length_in_cm: FloatType = FloatType(1.0),
                                  unit_mass_in_g: FloatType = FloatType(1.0),
@@ -55,7 +56,7 @@ class MhdState(HydroState):
         magnetic_field = np.array(conserved_magnetic_field) / np.array(volume)
         return MhdState(mass=_mass, density=density, velocity=velocity,
                         specific_thermal_energy=specific_thermal_energy,
-                        magnetic_field=magnetic_field, gamma=gamma,
+                        magnetic_field=magnetic_field, gamma=gamma, lorentz_heaviside=lorentz_heaviside,
                         unit_length_in_cm=unit_length_in_cm, unit_mass_in_g=unit_mass_in_g,
                         unit_velocity_in_cm_per_s=unit_velocity_in_cm_per_s, hubble_param=hubble_param,
                         scale_factor=scale_factor)
@@ -66,6 +67,7 @@ class MhdState(HydroState):
                                  velocity=None,
                                  specific_thermal_energy=None,
                                  magnetic_field=None,
+                                 lorentz_heaviside=False,
                                  gamma: FloatType = FloatType(5.0 / 3.0),
                                  unit_length_in_cm: FloatType = FloatType(1.0),
                                  unit_mass_in_g: FloatType = FloatType(1.0),
@@ -76,7 +78,7 @@ class MhdState(HydroState):
         mass = density * volume
         return MhdState(mass=mass, density=density, velocity=velocity,
                         specific_thermal_energy=specific_thermal_energy,
-                        magnetic_field=magnetic_field, gamma=gamma,
+                        magnetic_field=magnetic_field, gamma=gamma, lorentz_heaviside=lorentz_heaviside,
                         unit_length_in_cm=unit_length_in_cm, unit_mass_in_g=unit_mass_in_g,
                         unit_velocity_in_cm_per_s=unit_velocity_in_cm_per_s, hubble_param=hubble_param,
                         scale_factor=scale_factor)
@@ -98,6 +100,7 @@ class MhdState(HydroState):
             specific_thermal_energy=np.array(snap.part0.u, dtype=FloatType),
             magnetic_field=np.array(snap.MagneticField, dtype=FloatType),
             gamma=FloatType(5.0 / 3.0),
+            lorentz_heaviside=False,
             unit_length_in_cm=FloatType(snap.header.UnitLength_in_cm),
             unit_mass_in_g=FloatType(snap.header.UnitMass_in_g),
             unit_velocity_in_cm_per_s=FloatType(snap.header.UnitVelocity_in_cm_per_s),
