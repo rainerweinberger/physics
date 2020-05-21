@@ -139,6 +139,14 @@ class TestHydro(object):
         electron_number_density = state.electron_number_density(hydrogen_fraction=0.76, electron_abundance=1.16)
         assert electron_number_density == pytest.approx(electron_number_density_ref)
 
+    def test_hydro_state_pseudo_entropy(self):
+        state = HydroState(density=1.0, mass=2.0, velocity=[1.0, 0.0, 0.5], specific_thermal_energy=0.5)
+        temperature_ref = 2. / 3. * 0.5 * 0.5876821814762576 * constants.PROTONMASS / constants.BOLTZMANN
+        electron_number_density_ref = 1.16 * 0.76 * 1.0 / constants.PROTONMASS
+        entropy_ref = temperature_ref / electron_number_density_ref**(2./3.)
+        entropy = state.pseudo_entropy(hydrogen_fraction=0.76, electron_abundance=1.16)
+        assert entropy == pytest.approx(entropy_ref)
+
 
 class TestMhdState(object):
     def test_mhd_state_init(self):

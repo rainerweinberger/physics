@@ -273,3 +273,17 @@ class HydroState(object):
         """
         return np.array(electron_abundance * self.hydrogen_number_density(hydrogen_fraction=hydrogen_fraction),
                         dtype=FloatType)
+
+    def pseudo_entropy(self, hydrogen_fraction=0.76, electron_abundance=1.16):
+        """
+
+        :param hydrogen_fraction:
+            mass fraction in hydrogen
+        :param electron_abundance:
+            X_e / X_h number of electrons per hydogen atom
+        :return:
+            pseudo entropy T * n_e^(-2/3)
+        """
+        return self.temperature(hydrogen_fraction=hydrogen_fraction,
+                                electron_abundance=electron_abundance) * self.electron_number_density(
+            hydrogen_fraction=hydrogen_fraction, electron_abundance=electron_abundance) ** (-2. / 3.)
