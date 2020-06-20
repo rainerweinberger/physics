@@ -10,6 +10,7 @@ setuptools.setup(
     license="GNU General Public License v3 (GPLv3)",
     author_email="rainer.weinberger@cfa.harvard.edu",
     description="Useful physics stuff for python",
+    install_requires="numpy==1.18.2",
     long_description=long_description,
     long_description_content_type='text/markdown',
     url="https://github.com/rainerweinberger/physics",
