@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0da2679b-bd44-4bf2-9203-554e8add2b87" name="Default Changelist" comment="added pseudo_entropy to HydroState">
+    <list default="true" id="0da2679b-bd44-4bf2-9203-554e8add2b87" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.github/workflows/python-package.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/python-package.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/setup.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -314,7 +314,14 @@
       <option name="project" value="LOCAL" />
       <updated>1590033982915</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="library dependencies in setup.py">
+      <created>1592612355108</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1592612355108</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -342,13 +349,14 @@
     <MESSAGE value="Added MhdState" />
     <MESSAGE value="some small edits in units in MhdState" />
     <MESSAGE value="added pseudo_entropy to HydroState" />
-    <option name="LAST_COMMIT_MESSAGE" value="added pseudo_entropy to HydroState" />
+    <MESSAGE value="library dependencies in setup.py" />
+    <option name="LAST_COMMIT_MESSAGE" value="library dependencies in setup.py" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="-1663" y="41" width="892" height="520" key="CommitChangelistDialog2" timestamp="1592612312799">
+    <state x="-1663" y="41" width="892" height="520" key="CommitChangelistDialog2" timestamp="1592612354984">
       <screen x="-1878" y="23" width="1878" height="1057" />
     </state>
-    <state x="-1663" y="41" width="892" height="520" key="CommitChangelistDialog2/-1878.23.1878.1057/0.23.1680.1027@-1878.23.1878.1057" timestamp="1592612312799" />
+    <state x="-1663" y="41" width="892" height="520" key="CommitChangelistDialog2/-1878.23.1878.1057/0.23.1680.1027@-1878.23.1878.1057" timestamp="1592612354984" />
     <state x="1246" y="-2100" key="CommitChangelistDialog2/-98.-2137.3840.2137/38.23.1642.1027@-98.-2137.3840.2137" timestamp="1586921609732" />
     <state x="1246" y="-2100" key="CommitChangelistDialog2/-98.-2137.3840.2137/40.23.1640.1027@-98.-2137.3840.2137" timestamp="1590033982748" />
     <state x="614" y="41" key="CommitChangelistDialog2/-98.-2137.3840.2137/40.23.1640.1027@40.23.1640.1027" timestamp="1584291704904" />
@@ -377,9 +385,10 @@
     </state>
     <state x="-1488" y="181" key="SettingsEditor/-1878.23.1878.1057/0.23.1680.1027@-1878.23.1878.1057" timestamp="1592612216156" />
     <state x="381" y="177" width="900" height="722" key="SettingsEditor/-98.-2137.3840.2137/40.23.1640.1027@40.23.1640.1027" timestamp="1584291762809" />
-    <state x="921" y="-1758" width="800" height="536" key="Vcs.Push.Dialog.v2" timestamp="1590033985286">
-      <screen x="-98" y="-2137" width="3840" height="2137" />
+    <state x="-1380" y="210" width="499" height="266" key="Vcs.Push.Dialog.v2" timestamp="1592612358315">
+      <screen x="-1878" y="23" width="1878" height="1057" />
     </state>
+    <state x="-1380" y="210" width="499" height="266" key="Vcs.Push.Dialog.v2/-1878.23.1878.1057/0.23.1680.1027@-1878.23.1878.1057" timestamp="1592612358315" />
     <state x="921" y="-1758" key="Vcs.Push.Dialog.v2/-98.-2137.3840.2137/38.23.1642.1027@-98.-2137.3840.2137" timestamp="1586921611790" />
     <state x="921" y="-1758" key="Vcs.Push.Dialog.v2/-98.-2137.3840.2137/40.23.1640.1027@-98.-2137.3840.2137" timestamp="1590033985286" />
     <state x="475" y="205" key="Vcs.Push.Dialog.v2/-98.-2137.3840.2137/40.23.1640.1027@40.23.1640.1027" timestamp="1584201728610" />
