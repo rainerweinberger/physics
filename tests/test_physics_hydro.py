@@ -143,7 +143,7 @@ class TestHydro(object):
         state = HydroState(density=1.0, mass=2.0, velocity=[1.0, 0.0, 0.5], specific_thermal_energy=0.5)
         temperature_ref = 2. / 3. * 0.5 * 0.5876821814762576 * constants.PROTONMASS / constants.BOLTZMANN
         electron_number_density_ref = 1.16 * 0.76 * 1.0 / constants.PROTONMASS
-        entropy_ref = temperature_ref / electron_number_density_ref**(2./3.)
+        entropy_ref = temperature_ref / electron_number_density_ref ** (2. / 3.)
         entropy = state.pseudo_entropy(hydrogen_fraction=0.76, electron_abundance=1.16)
         assert entropy == pytest.approx(entropy_ref)
 
@@ -209,7 +209,7 @@ class TestMhdState(object):
         assert state.thermal_energy_density == pytest.approx(0.5)
         # pressure
         assert state.thermal_pressure == pytest.approx(1.0 / 3.0)
-        assert state.pressure == pytest.approx(1./3. + 10.5)
+        assert state.pressure == pytest.approx(1. / 3. + 10.5)
         # thermal energy
         assert state.thermal_energy == pytest.approx(1.0)
         # sound speed
@@ -220,6 +220,8 @@ class TestMhdState(object):
         # magnetic field
         b_fld = np.sqrt(4.0 * np.pi) * np.array([[2.0, 1.0, 4.0]], ndmin=2)
         assert state.magnetic_field == pytest.approx(b_fld)
+
+        assert state.absolute_magnetic_field == pytest.approx(np.sqrt(21. * 4.0 * np.pi))
 
         assert state.magnetic_energy_density == pytest.approx(10.5)
 

@@ -142,6 +142,10 @@ class MhdState(HydroState):
         return self._magnetic_field * unit_magnetic_field
 
     @property
+    def absolute_magnetic_field(self):
+        return np.sqrt(self.magnetic_field[:, 0] ** 2 + self.magnetic_field[:, 1] ** 2 + self.magnetic_field[:, 2] ** 2)
+
+    @property
     def magnetic_energy_density(self):
         egy = self.magnetic_field[:, 0] ** 2 + self.magnetic_field[:, 1] ** 2 + self.magnetic_field[:, 2] ** 2
         egy /= 8.0 * np.pi
