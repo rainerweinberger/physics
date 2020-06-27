@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="0da2679b-bd44-4bf2-9203-554e8add2b87" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/physics/hydro/mhd_state.py" beforeDir="false" afterPath="$PROJECT_DIR$/physics/hydro/mhd_state.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_physics_hydro.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_physics_hydro.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -343,11 +342,17 @@
       <option name="project" value="LOCAL" />
       <updated>1592614024401</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="added absolute_magnetic_field property to MhdState">
+      <created>1593288271390</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1593288271390</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="first unit tests" />
     <MESSAGE value="created submodule units" />
     <MESSAGE value="renaming of test scripts" />
     <MESSAGE value="introduced new submodule physics/cosmology with class Cosmology" />
@@ -372,13 +377,14 @@
     <MESSAGE value="update python-package.yml" />
     <MESSAGE value="adjusting working directory for pytest" />
     <MESSAGE value="further edits to .github workflows" />
-    <option name="LAST_COMMIT_MESSAGE" value="further edits to .github workflows" />
+    <MESSAGE value="added absolute_magnetic_field property to MhdState" />
+    <option name="LAST_COMMIT_MESSAGE" value="added absolute_magnetic_field property to MhdState" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="-1663" y="41" width="892" height="520" key="CommitChangelistDialog2" timestamp="1592614024299">
+    <state x="-1663" y="41" width="892" height="520" key="CommitChangelistDialog2" timestamp="1593288271255">
       <screen x="-1878" y="23" width="1878" height="1057" />
     </state>
-    <state x="-1663" y="41" width="892" height="520" key="CommitChangelistDialog2/-1878.23.1878.1057/0.23.1680.1027@-1878.23.1878.1057" timestamp="1592614024299" />
+    <state x="-1663" y="41" width="892" height="520" key="CommitChangelistDialog2/-1878.23.1878.1057/0.23.1680.1027@-1878.23.1878.1057" timestamp="1593288271255" />
     <state x="1246" y="-2100" key="CommitChangelistDialog2/-98.-2137.3840.2137/38.23.1642.1027@-98.-2137.3840.2137" timestamp="1586921609732" />
     <state x="1246" y="-2100" key="CommitChangelistDialog2/-98.-2137.3840.2137/40.23.1640.1027@-98.-2137.3840.2137" timestamp="1590033982748" />
     <state width="917" height="279" key="GridCell.Tab.0.bottom" timestamp="1593288234199">
@@ -401,14 +407,14 @@
     </state>
     <state width="917" height="279" key="GridCell.Tab.0.right/-1878.23.1878.1057/0.23.1680.1027@-1878.23.1878.1057" timestamp="1593288234198" />
     <state width="1909" height="646" key="GridCell.Tab.0.right/-98.-2137.3840.2137/40.23.1640.1027@-98.-2137.3840.2137" timestamp="1590034017966" />
-    <state x="-1488" y="181" width="900" height="722" key="SettingsEditor" timestamp="1593287855921">
+    <state x="-1488" y="181" width="900" height="722" key="SettingsEditor" timestamp="1593288286100">
       <screen x="-1878" y="23" width="1878" height="1057" />
     </state>
-    <state x="-1488" y="181" key="SettingsEditor/-1878.23.1878.1057/0.23.1680.1027@-1878.23.1878.1057" timestamp="1593287855921" />
-    <state x="-1380" y="210" width="499" height="266" key="Vcs.Push.Dialog.v2" timestamp="1592614026149">
+    <state x="-1488" y="181" key="SettingsEditor/-1878.23.1878.1057/0.23.1680.1027@-1878.23.1878.1057" timestamp="1593288286100" />
+    <state x="-1380" y="210" width="499" height="266" key="Vcs.Push.Dialog.v2" timestamp="1593288273451">
       <screen x="-1878" y="23" width="1878" height="1057" />
     </state>
-    <state x="-1380" y="210" width="499" height="266" key="Vcs.Push.Dialog.v2/-1878.23.1878.1057/0.23.1680.1027@-1878.23.1878.1057" timestamp="1592614026149" />
+    <state x="-1380" y="210" width="499" height="266" key="Vcs.Push.Dialog.v2/-1878.23.1878.1057/0.23.1680.1027@-1878.23.1878.1057" timestamp="1593288273451" />
     <state x="921" y="-1758" key="Vcs.Push.Dialog.v2/-98.-2137.3840.2137/38.23.1642.1027@-98.-2137.3840.2137" timestamp="1586921611790" />
     <state x="921" y="-1758" key="Vcs.Push.Dialog.v2/-98.-2137.3840.2137/40.23.1640.1027@-98.-2137.3840.2137" timestamp="1590033985286" />
     <state x="-1256" y="350" key="git4idea.merge.GitPullDialog" timestamp="1592612326431">
