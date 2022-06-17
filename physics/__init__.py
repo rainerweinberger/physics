@@ -44,6 +44,3 @@ def print_copyright():
                "along with this program.  If not, see <https://www.gnu.org/licenses/>.\n"
     print(cpyright)
 
-
-if __name__ == "__main__":
-    print_copyright()
