@@ -1,6 +1,6 @@
 # Physics
 
-Created by Rainer Weinberger, 2020 (rainer.weinberger@cfa.harvard.edu)
+Created by Rainer Weinberger, 2020-2022 (rainer@cita.utoronto.ca)
 
 This is a small python package that simplifies working with physics equations.
 

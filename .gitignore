@@ -1,5 +1,6 @@
 /htmlcov/
 *~
+*.pyc
 build
 dist
 physics.egg-info

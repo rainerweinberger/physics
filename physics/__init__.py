@@ -28,7 +28,7 @@ def print_copyright():
     :return:
     """
     cpyright = "This is a physics package for python\n" \
-               "Copyright (C) 2020  Rainer Weinberger\n" \
+               "Copyright (C) 2020-2022  Rainer Weinberger\n" \
                "\n" \
                "This program is free software: you can redistribute it and/or modify\n"\
                "it under the terms of the GNU General Public License as published by\n"\
@@ -45,4 +45,5 @@ def print_copyright():
     print(cpyright)
 
 
-print_copyright()
+if __name__ == "__main__":
+    print_copyright()
