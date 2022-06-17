@@ -1,2 +1,5 @@
 /htmlcov/
 *~
+build
+dist
+physics.egg-info
