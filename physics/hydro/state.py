@@ -81,7 +81,7 @@ class HydroState(object):
                           scale_factor=scale_factor)
 
     @staticmethod
-    def from_arepo_snapshot(snap):
+    def from_arepo_snapshot(snap, center_of_mass_velocity=np.array([0,0,0], dtype=FloatType)):
         """
         direct interface from inspector gadget library
         :param snap: arepo.Simulation object (inspector gadget library)
@@ -90,10 +90,16 @@ class HydroState(object):
         scale_factor = 1.0
         if snap.parameters.ComovingIntegrationOn == 1:
             scale_factor = snap.time
+        
+        vel = np.array(snap.part0.velocity, dtype=FloatType)
+        vel[:,0] -= center_of_mass_velocity[0]
+        vel[:,1] -= center_of_mass_velocity[1]
+        vel[:,2] -= center_of_mass_velocity[2]
+
         return HydroState(
             mass=np.array(snap.part0.mass, dtype=FloatType),
             density=np.array(snap.part0.rho, dtype=FloatType),
-            velocity=np.array(snap.part0.velocity, dtype=FloatType),
+            velocity=vel,
             specific_thermal_energy=np.array(snap.part0.u, dtype=FloatType),
             gamma=FloatType(5.0 / 3.0),
             unit_length_in_cm=FloatType(snap.header.UnitLength_in_cm),
