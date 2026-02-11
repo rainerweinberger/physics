@@ -102,10 +102,10 @@ class HydroState(object):
             velocity=vel,
             specific_thermal_energy=np.array(snap.part0.u, dtype=FloatType),
             gamma=FloatType(5.0 / 3.0),
-            unit_length_in_cm=FloatType(snap.header.UnitLength_in_cm),
-            unit_mass_in_g=FloatType(snap.header.UnitMass_in_g),
-            unit_velocity_in_cm_per_s=FloatType(snap.header.UnitVelocity_in_cm_per_s),
-            hubble_param=FloatType(snap.header.HubbleParam),
+            unit_length_in_cm=FloatType(snap.parameters.UnitLength_in_cm),
+            unit_mass_in_g=FloatType(snap.parameters.UnitMass_in_g),
+            unit_velocity_in_cm_per_s=FloatType(snap.parameters.UnitVelocity_in_cm_per_s),
+            hubble_param=FloatType(snap.parameters.HubbleParam),
             scale_factor=FloatType(scale_factor)
         )
 

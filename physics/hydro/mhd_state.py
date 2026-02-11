@@ -107,10 +107,10 @@ class MhdState(HydroState):
             magnetic_field=np.array(snap.MagneticField, dtype=FloatType),
             gamma=FloatType(5.0 / 3.0),
             lorentz_heaviside=False,
-            unit_length_in_cm=FloatType(snap.header.UnitLength_in_cm),
-            unit_mass_in_g=FloatType(snap.header.UnitMass_in_g),
-            unit_velocity_in_cm_per_s=FloatType(snap.header.UnitVelocity_in_cm_per_s),
-            hubble_param=FloatType(snap.header.HubbleParam),
+            unit_length_in_cm=FloatType(snap.parameters.UnitLength_in_cm),
+            unit_mass_in_g=FloatType(snap.parameters.UnitMass_in_g),
+            unit_velocity_in_cm_per_s=FloatType(snap.parameters.UnitVelocity_in_cm_per_s),
+            hubble_param=FloatType(snap.parameters.HubbleParam),
             scale_factor=FloatType(scale_factor))
 
     """ magic methods """
